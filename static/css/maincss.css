@@ -1,0 +1,88 @@
+TABLE.main {
+	WIDTH: 100%; HEIGHT: 100%
+}
+TABLE.main TH {
+	BACKGROUND: url(../img/main.gif) repeat-x 0px 0px; HEIGHT: 60px
+}
+TABLE.main TD {
+	VERTICAL-ALIGN: top
+}
+TABLE.main .logo {
+	WIDTH: 160px; VERTICAL-ALIGN: middle
+}
+TABLE.main .nav {
+	  WHITE-SPACE: nowrap; FLOAT: left; HEIGHT: 30px; PADDING-TOP: 30px
+}
+TABLE.main .nav LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 2px; WIDTH: 70px; PADDING-RIGHT: 2px; BACKGROUND: url(../img/main.gif) no-repeat right -60px; FLOAT: left; PADDING-TOP: 0px
+}
+TABLE.main .nav LI A {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; LINE-HEIGHT: 30px; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; PADDING-LEFT: 6px; OUTLINE-WIDTH: medium; PADDING-RIGHT: 6px; DISPLAY: block; HEIGHT: 30px; COLOR: #488bd1; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+TABLE.main .nav LI A:hover {
+	BORDER-BOTTOM: #0099cc 2px solid; LINE-HEIGHT: 28px; HEIGHT: 28px
+}
+TABLE.main LI A.current {
+	BORDER-BOTTOM: #0099cc 2px solid; LINE-HEIGHT: 28px; HEIGHT: 28px
+}
+TABLE.main .link {
+	TEXT-ALIGN: right; LINE-HEIGHT: 29px; WIDTH: 240px; WHITE-SPACE: nowrap; FLOAT: right; HEIGHT: 29px; CLEAR: right; OVERFLOW: hidden
+}
+TABLE.main .link A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; PADDING-TOP: 0px
+}
+TABLE.main .menu {
+	BACKGROUND-COLOR: #f5faff; BORDER-RIGHT: #a3c4d7 1px solid
+}
+TABLE.main .menu DL {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; DISPLAY: none; PADDING-TOP: 0px
+}
+TABLE.main .menu .default {
+	DISPLAY: block
+}
+TABLE.main .menu DT {
+	BORDER-BOTTOM: #b7d3e1 1px dashed; LINE-HEIGHT: 26px; PADDING-LEFT: 10px; HEIGHT: 26px; COLOR: #333333; FONT-WEIGHT: bold
+}
+TABLE.main .menu DD A {
+	LINE-HEIGHT: 26px; OUTLINE-STYLE: none; OUTLINE-COLOR: invert;  OUTLINE-WIDTH: medium; DISPLAY: block; HEIGHT: 26px; COLOR: #666666
+}
+TABLE.main .menu DD A:hover {
+	BACKGROUND-COLOR: #eaf4ff
+}
+TABLE.main .menu DD A.current {
+	BACKGROUND-COLOR: #e4f2fa
+}
+TABLE.main IFRAME {
+	WIDTH: 100%; HEIGHT: 100%
+}
+
+
+/* wrap */
+.wrap { padding-left: 160px; text-align: left; }
+	* html .wrap { height: 1%; }
+/* sidenav */
+.side { width: 160px; background: url(../img/navbg.gif) repeat-x 0 0;position: absolute; top: 88px; left: 0px; padding-top: 10px; }
+	.side a{ display: block; height: 20px; line-height: 20px; color: #666; padding-left: 30px; }
+		.side a:hover { color: #007FB2; }
+	.side a.sideul{ padding-left: 6px; }
+	.side .sideul { font-size: 14px; height: 24px; line-height: 24px; font-weight: 600; }
+		.side .sidelist{ background: url(../img/listicon.gif) 20px 50% no-repeat; }
+	.side a{ display:block; margin:1px 2px 1px 0px; padding:1px 0 0px 30px; border:1px solid #F2F9FD; background:url(../img/bg_repno.gif) no-repeat 10px -40px; color:#666; }
+	.side a:hover{ text-decoration:none; margin-right:0; width: 120px; border:1px solid #B5CFD9; /*border-right:1px solid #FFF;*/ background:#FFF; }
+	.side a.tabon{ text-decoration:none; margin-right:0; width: 150px; border:1px solid #B5CFD9; /*border-right:1px solid #FFF;*/ background:#FFF url(bg_repy.gif) repeat-y; color:#2366A8; }
+	.side a.sideul:hover{ text-decoration:none; margin-right:0; width: 150px; border:1px solid #B5CFD9; /*border-right:1px solid #FFF;*/ background:#FFF; }
+	.side a.sideul.tabon{ text-decoration:none; margin-right:0; width: 150px; border:1px solid #B5CFD9; /*border-right:1px solid #FFF;*/ background:#FFF url(bg_repy.gif) repeat-y; color:#2366A8; }
+
+.subinfo a{PADDING-LEFT: 30px;}
+/* title */
+h3 { font-size:14px; border-left: 5px solid #FF9000; padding-left: 15px; margin: 10px 0 5px 0px; }
+h4 { width:90%; color: #333; }
+h4 i { color: #aaa; }
+h5 { font-size:12px; border-left: 3px solid #0095C8; padding-left: 15px; margin: 10px 0 5px 0px; height: 16px; line-height: 16px; }
+h6 { font-size:12px; padding-left: 15px; margin: 4px 0 2px 0px; height: 24px; line-height: 24px; }
+h6:hover { background: #F9F9F9; }
+h6 a { padding-left: 24px; color: #006C9F; }
+h6 a.spread, em.spread { background:url(../img/spread.gif) no-repeat 0 50%; }
+h6 a.shrink, em.shrink { background:url(../img/shrink.gif) no-repeat 0 50%; }
+
+.sidelist {margin-left:30px;}
