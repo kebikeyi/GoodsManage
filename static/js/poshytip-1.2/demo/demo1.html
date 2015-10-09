@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Poshy Tip jQuery Plugin Demo Page</title>
+
+	<!-- Tooltip classes -->
+	<link rel="stylesheet" href="../src/tip-yellow/tip-yellow.css" type="text/css" /> 
+	<link rel="stylesheet" href="../src/tip-yellowsimple/tip-yellowsimple.css" type="text/css" />
+
+	<!-- jQuery and the Poshy Tip plugin files -->
+	<script type="text/javascript" src="includes/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="../src/jquery.poshytip.js"></script>
+
+	<!-- Setup examples on this page -->
+	<script type="text/javascript">
+		//<![CDATA[
+		$(function(){
+ 
+			$('#demo-manual-trigger').poshytip({
+				content: 'Hey, there! This is a tooltip.',
+				showOn: 'none',
+				alignTo: 'target',
+				alignX: 'inner-left',
+				offsetX: 0,
+				offsetY: 5
+			});
+			$('#button-show').click(function() { $('#demo-manual-trigger').poshytip('show'); });
+
+		});
+		//]]>
+	</script>
+
+
+</head>
+
+<body>
+
+	<div id="holder">
+
+
+
+		<div id="content">
+			<!-- #demo-manual-trigger -->
+			<p><a id="demo-manual-trigger" href="#">This link has a tooltip that is not triggered automatically</a></p>
+			<p><button id="button-show">Show</button> <button id="button-show-delayed">Show in 2 sec.</button> <button id="button-hide">Hide</button> <button id="button-hide-delayed">Hide in 2 sec.</button> <button id="button-update">Update Content</button> <button id="button-disable">Disable</button> <button id="button-enable">Enable</button> <button id="button-destroy">Destroy</button></p>
+			<div class="code-block">
+			
+			</div>
+
+			
+
+	</div>
+
+</body>
+</html>
