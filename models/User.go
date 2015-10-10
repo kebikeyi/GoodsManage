@@ -14,8 +14,8 @@ func (this *User) Init() *User {
 }
 
 //登录
-func (this *User) Login(uname string, pwd string) bool {
-	has, err := X.Where("name=? and pwd=?", uname, pwd).Get(this)
+func (this *User) Login(uname string, psw string) bool {
+	has, err := X.Where("name=? and pwd=?", uname, psw).Get(this)
 	if err != nil {
 		return false
 	}

@@ -25,5 +25,10 @@ func init() {
 	if err = X.Sync2(new(User)); err != nil {
 		log.Fatalf("failt User to sync", err.Error())
 	}
-
+	//初始管理员
+	var tuser = new(User).Init()
+	var d = tuser.GetUser("admin")
+	if d == false {
+		_, _ = X.Exec("insert into [User](uname,password)values('admin','admin')")
+	}
 }
