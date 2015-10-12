@@ -25,8 +25,9 @@ func (this *LoginController) Post() {
 
 	var user = new(User).Init()
 	var b = user.Login(username, password)
+
 	if b == false {
-		this.Ctx.WriteString("用户名或密码有误！")
+		this.Ctx.WriteString("<script language='javascript'>alert('用户名或密码有误！');</script>")
 		return
 	}
 	this.SetSession("uid", user.ID)

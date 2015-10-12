@@ -8,8 +8,8 @@ type MainController struct {
 	beego.Controller
 }
 
-func (c *MainController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
-	c.TplNames = "login/login.html"
+func (this *MainController) Get() {
+	this.Data["Website"] = "beego.me"
+	this.Data["Email"] = "astaxie@gmail.com"
+	this.TplNames = "login/login.html"
 }
