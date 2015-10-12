@@ -1,5 +1,9 @@
 package models
 
+import (
+	"fmt"
+)
+
 type User struct {
 	ID       int64
 	UNAME    string `xorm:"varchar(50)"` //用户名
@@ -17,6 +21,7 @@ func (this *User) Init() *User {
 func (this *User) Login(uname string, psw string) bool {
 	has, err := X.Where("name=? and pwd=?", uname, psw).Get(this)
 	if err != nil {
+		fmt.Println("------11111")
 		return false
 	}
 	return has
