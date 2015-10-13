@@ -13,21 +13,22 @@ type LoginController struct {
 func (this *LoginController) Get() {
 	this.Data["Website"] = "beego.me"
 	this.Data["Email"] = "astaxie@gmail.com"
-	var User = new(User).Init()
-	fmt.Println("login.user", User.Query("select * from User"))
-	fmt.Println("login.Service.User", User.Query("select * from User"))
-	fmt.Println("login.Service.User.Get(2)", User.Get(2))
+	var user = new(Tuser).Init()
+	fmt.Println("login.user", user.Query("select * from Tuser"))
+	fmt.Println("login.Service.User", user.Query("select * from Tuser"))
+	fmt.Println("login.Service.User.Get(2)", user.Get(1))
 	this.TplNames = "login/login.html"
 }
 func (this *LoginController) Post() {
 	var username = this.GetString("uname")
 	var password = this.GetString("psw")
 
-	var user = new(User).Init()
+	var user = new(Tuser).Init()
 	var b = user.Login(username, password)
-
+	fmt.Println(username, password)
+	fmt.Println(b)
 	if b == false {
-		this.Ctx.WriteString("<script language='javascript'>alert('用户名或密码有误！');</script>")
+		this.Ctx.WriteString("alert('用户名或密码有误！');")
 		return
 	}
 	this.SetSession("uid", user.ID)
