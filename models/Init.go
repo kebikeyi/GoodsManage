@@ -10,7 +10,7 @@ import (
 )
 
 var X *xorm.Engine
-var Usera *User
+var Usera *Tuser
 
 func init() {
 	var err error
@@ -22,13 +22,13 @@ func init() {
 	fmt.Println("-------11111")
 	X.SetMapper(core.SameMapper{})
 	//用户表
-	if err = X.Sync2(new(User)); err != nil {
-		log.Fatalf("failt User to sync", err.Error())
+	if err = X.Sync2(new(Tuser)); err != nil {
+		log.Fatalf("failt Tuser to sync", err.Error())
 	}
 	//初始管理员
-	var tuser = new(User).Init()
+	var tuser = new(Tuser).Init()
 	var d = tuser.GetUser("admin")
 	if d == false {
-		_, _ = X.Exec("insert into [User](uname,password)values('admin','admin')")
+		_, _ = X.Exec("insert into [Tuser](uname,password)values('admin','admin')")
 	}
 }

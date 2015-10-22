@@ -27,7 +27,7 @@ func (this *LoginController) Post() {
 	var b = user.Login(username, password)
 	fmt.Println(username, password)
 	fmt.Println(b)
-	if b == false {
+	if false == b {
 		this.Ctx.WriteString("alert('用户名或密码有误！');")
 		return
 	}
