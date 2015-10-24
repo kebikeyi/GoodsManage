@@ -16,7 +16,7 @@ func (this *LoginController) Get() {
 	var user = new(Tuser).Init()
 	fmt.Println("login.user", user.Query("select * from Tuser"))
 	fmt.Println("login.Service.User", user.Query("select * from Tuser"))
-	fmt.Println("login.Service.User.Get(2)", user.Get(1))
+	fmt.Println("login.Service.User.Get(1)", user.Get(1))
 	this.TplNames = "login/login.html"
 }
 func (this *LoginController) Post() {
