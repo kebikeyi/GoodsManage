@@ -25,7 +25,7 @@ func (this *LoginController) Post() {
 
 	var user = new(Tuser).Init()
 	var b = user.Login(username, password)
-	fmt.Println(username, password)
+	fmt.Println(user)
 	fmt.Println(b)
 	if false == b {
 		this.Ctx.WriteString("alert('用户名或密码有误！');")
