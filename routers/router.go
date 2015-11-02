@@ -9,9 +9,10 @@ import (
 
 var FilterUser = func(ctx *context.Context) {
 	uid, ok := ctx.Input.Session("uid").(int64)
+	fmt.Println(uid, ok)
 	fmt.Println("auth check:", uid, ok)
 	if !ok {
-		// ctx.WriteString("<script language='javascript'>window.top.location='/login.html';</script>")
+		ctx.WriteString("<script language='javascript'>window.top.location='/login.html';</script>")
 		ctx.Redirect(302, "/login")
 		return
 	}
