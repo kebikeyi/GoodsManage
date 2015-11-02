@@ -1,50 +1,173 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+<title>商品管理系统</title>
+<link rel="stylesheet" type="text/css" href="/easyui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
+<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+<style type="text/css">
+html,body {
+	height: 100%;
+}
+.box {
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAD2', endColorstr='#FAFAD2'); /*  IE */
+	background-image:linear-gradient(bottom, #FF3300  0%, #FF3300  100%);
+	background-image:-o-linear-gradient(bottom, #FF3300  0%, #FF3300  100%);
+	background-image:-moz-linear-gradient(bottom, #FF3300  0%, #FF3300  100%);
+	background-image:-webkit-linear-gradient(bottom, #FF3300  0%, #FF3300  100%);
+	background-image:-ms-linear-gradient(bottom, #FF3300  0%, #FF3300  100%);
+	
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+	height: 95%;
+}
+.login-box {
+	width: 100%;
+	max-width:500px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
 
-    <title>商品管理系统</title>
+	margin-top: -200px;
+	/*设置负值，为要定位子盒子的一半高度*/
+	
+}
+@media screen and (min-width:500px){
+	.login-box {
+		left: 50%;
+		/*设置负值，为要定位子盒子的一半宽度*/
+		margin-left: -250px;
+	}
+}	
 
-    <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+.form {
+	width: 100%;
+	max-width:500px;
+	height: 275px;
+	margin: 25px auto 0px auto;
+	padding-top: 25px;
+}	
+.login-content {
+	height: 300px;
+	width: 100%;
+	max-width:500px;
+	background-color: rgba(255, 250, 2550, .6);
+	float: left;
+}		
+	
+	
+.input-group {
+	margin: 0px 0px 30px 0px !important;
+}
+.form-control,
+.input-group {
+	height: 40px;
+}
 
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+.form-group {
+	margin-bottom: 0px !important;
+}
+.login-title {
+	padding: 20px 10px;
+	background-color: rgba(0, 0, 0, .6);
+}
+.login-title h1 {
+	margin-top: 10px !important;
+}
+.login-title small {
+	color: #fff;
+}
 
-    
-    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+.link p {
+	line-height: 20px;
+	margin-top: 30px;
+}
+.btn-sm {
+	padding: 8px 24px !important;
+	font-size: 16px !important;
+}
+</style>
 
-   
-  </head>
+</head>
 
-  <body>
+<body>
+<div class="box">
+		<div class="login-box">
+			<div class="login-title text-center">
+				<h1><small>登录</small></h1>
+			</div>
+			<div class="login-content ">
+			<div class="form">
+			<form id="form1" action="/login" method="post">
+				<div class="form-group">
+					<div class="col-xs-12  ">
+						<div class="input-group text-center">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" id="uname" name="uname" class="form-control" placeholder="用户名">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12  ">
+						<div class="input-group text-center">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="password" id="psw" name="psw" class="form-control" placeholder="密码">
+						</div>
+					</div>
+				</div>
+				<div class="form-group form-actions">
+					<div class="col-xs-4 col-xs-offset-4  text-center">
+						<button type="button" id="btn_login" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 登录</button>
+					</div>
+				</div>
+				<!-- <div class="form-group">
+					<div class="col-xs-6 link">
+						<p class="text-center remove-margin"><small>忘记密码？</small> <a href="javascript:void(0)" ><small>找回</small></a>
+						</p>
+					</div>
+					<div class="col-xs-6 link">
+						<p class="text-center remove-margin"><small>还没注册?</small> <a href="javascript:void(0)" ><small>注册</small></a>
+						</p>
+					</div>
+				</div> -->
+				<script type="text/javascript">
+             $(function(){
+              $('#btn_login').click(function () {
+                //$('#ipt_account').poshytip('show');
+                $('#form1').ajaxSubmit(function (data) {
+                    //CxcDialog('登录失败',data,'Warning');
+                    //$('#sysname').poshytip('update':'aaaa');
+                    if(data!="1"){
+                        jQuery.messager.alert('登录失败', "用户名或密码错误!", "info");                       
+                    }
+                    else{
+                        window.location='/main';
+                    }
 
-    <div class="container">
+                    //$('#btn_login').poshytip({'hideDelayed':2000,'hideDelayed':2000});
 
-      <form class="form-signin" id="form1" action="/login" method="post">
-        <h2 class="form-signin-heading">请先登录...</h2>
-        <label for="inputEmail" class="sr-only">登录名或邮箱</label>
-        <input type="text" id="uname" name="uname" class="form-control" placeholder="text" required autofocus>
-        <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" id="psw" name="psw" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> 记住密码
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-      </form>
+                });
+                return false;
+            });
+              $('#uname').focus();
+         });
+				</script>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
 
-    </div> <!-- /container -->
+<div style="text-align:center;color:#CCCC00">
+<p style="color:#989898">龙翔出品：<a href="javascript:void(0)" target="_blank" style="color:#989898">商品管理系统</a></p>
+</div>
 
+</body>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-   <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
-  </body>
 </html>
