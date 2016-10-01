@@ -3,15 +3,18 @@ package controllers
 import (
 	"bytes"
 	"fmt"
-	"github.com/astaxie/beego"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/astaxie/beego"
 )
 
+//控制器
 type MainController struct {
 	beego.Controller
 }
 
+//提交
 func (this *MainController) Get() {
 	fmt.Println("this is main")
 	var nick = this.GetSession("uname")
@@ -20,9 +23,10 @@ func (this *MainController) Get() {
 	// cookie, err := this.cookie("id")
 	// this.Data["nick"] = cookie.uname
 	this.Layout = "main/index.html"
-	this.TplNames = "login/login.html"
+	this.TplName = "login/login.html"
 }
 
+//测试服务
 func (this *MainController) TestService() {
 	var params = make(map[string]string)
 	params["msg"] = "dlm"
